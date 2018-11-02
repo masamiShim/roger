@@ -23,12 +23,15 @@
         </a>
       </li>
     </ul>
+    <Button label="aaaa" :sec="true" />
   </div>
 </template>
 
 <script>
+import Button from '../atoms/Button.vue'
 export default {
   name: 'HelloWorld',
+  components: {Button},
   data () {
     return {
       msg: "Let's Create Roger"
