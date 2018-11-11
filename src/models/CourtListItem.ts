@@ -1,6 +1,6 @@
-import { Court } from './Court'
+import { CourtItem } from './CourtItem'
 
 export class CourtListItem {
-  constructor (name: string, availableCourts: Array<Court>) {
+  constructor (name: string, availableCourts: Array<CourtItem>) {
   }
 }

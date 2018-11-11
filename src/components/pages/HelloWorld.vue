@@ -10,32 +10,16 @@
       </div>
       <v-layout row wrap>
         <v-flex xs6 sm3>
-          <v-checkbox
-            :label="'8:30～10:30'"
-            v-model="checkbox"
-            hide-detail
-          ></v-checkbox>
+          <court v-bind="court1" />
         </v-flex>
         <v-flex xs6 sm3>
-          <v-checkbox
-            :label="'10:30 ～ 12:30'"
-            v-model="checkbox"
-            hide-detail
-          ></v-checkbox>
+          <court v-bind="court2" />
         </v-flex>
         <v-flex xs6 sm3>
-          <v-checkbox
-            :label="'12:30 ～ 14:30'"
-            v-model="checkbox"
-            hide-detail
-          ></v-checkbox>
+          <court v-bind="court3" />
         </v-flex>
         <v-flex xs6 sm3>
-          <v-checkbox
-            :label="'14:30 ～ 16:30'"
-            v-model="checkbox"
-            hide-detail
-          ></v-checkbox>
+          <court v-bind="court4" />
         </v-flex>
       </v-layout>
     </div>
@@ -55,8 +39,41 @@
 </template>
 
 <script>
+import Court from '../../components/atoms/Court.vue'
+
 export default {
-  name: 'Hello'
+  name: 'Hello',
+  components: {
+    court: Court
+  },
+  comments: {
+    'court': Court
+  },
+  data () {
+    return {
+      checkbox: false,
+      court1: {
+        courtNo: 'C',
+        from: '8:30',
+        to: '10:30'
+      },
+      court2: {
+        courtNo: 'A',
+        from: '12:30',
+        to: '14:30'
+      },
+      court3: {
+        courtNo: 'B',
+        from: '14:30',
+        to: '16:30'
+      },
+      court4: {
+        courtNo: 'D',
+        from: '16:30',
+        to: '18:30'
+      }
+    }
+  }
 }
 </script>
 <style>
